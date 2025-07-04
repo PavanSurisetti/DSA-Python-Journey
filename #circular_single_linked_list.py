@@ -5,7 +5,7 @@ class node:
         self.next=None
 class Circular_linked_list:#linked list class
     def __init__(self):#creating of head
-        self.head=None
+        self.head=None  
     def insertion_at_begin(self,data):
         new_node=node(data)
         if(self.head==None):#initially no nodes there,after the newnode assignig the address of newnode to its reference
