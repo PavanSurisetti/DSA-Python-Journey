@@ -12,14 +12,14 @@ class hashTable:
     def __hash__(self,key):
         return hash(key)%self.size
     def insert(self,key,value):
-        index=self.__hash__(key)
-        if(self.table[index] is None):#checking whether the first slot is empty or not
+        index=self.__hash__(key)#function call
+        if(self.table[index] is None):#checking whether the  slot is empty or not
             self.table[index]=node(key,value)#if it is empty then we will assign the value to the index returned by the hash function
             self.no_of_elements+=1
-        else:
+        else:#if collision occurs
             temp=self.table[index]#it will return the address of the node.
             while temp :
-                if(temp.key==key): #if the key found then it will update the value  
+                if(temp.key==key): #if the key already exists, then it will update with the new value  
                     temp.value=value#here i am updating the value
                     return
                 temp=temp.next#updating  a location
@@ -30,7 +30,7 @@ class hashTable:
     def delete(self,key):
         index=self.__hash__(key)
         temp=self.table[index]#assiging to  a temp variable
-        prev=None
+        prev=None#prev keeps track of the node before temp.
         while temp:
             if(temp.key==key):
                 if(prev):
