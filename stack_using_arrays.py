@@ -14,9 +14,9 @@ class stack:
         self.items.append(data)
         print(f'{data} inserted succesfully')
     def pop(self):
-        if(len(self.items)==0):
+        if(len(self.items)==0):#there is no elements in the stack
             print('stack is empty')
-        else:
+        else:#some elements are there!
             popped=self.items.pop()
             print(f'{popped} deleted successfully')
     def peek(self):
@@ -28,7 +28,7 @@ class stack:
     def display(self):
         print('----'*10)
         print('Current Stack contains:')
-        if(len(self.items)==0):
+        if(len(self.items)==0):#there is no elements
             print('stack is empty')
         else:
             for i in self.items[::-1]:#it will display from the top to bottom
